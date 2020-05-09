@@ -1,0 +1,26 @@
+#插件消息前缀
+Prefix: "&7[&bPVPControl&7]"
+
+#总设置
+Settings:
+
+# 玩家进入服务器默认是否为PVP模式
+  DefaultPVPMode: false
+
+# 是否以大标题方式提示消息
+  TitleMessage: true
+
+# 是否开启战斗模式后 满饱食度不回复生命值
+  NoLifeRecovery: true
+
+#语言文件设置
+Language:
+  NoPermission: "&c你没有任何权限"
+  SucessfullyReload: "&a成功重载插件"
+  CancelAttack: "&6无法攻击对方!你是和平模式"
+  CancelAttack2: "&6无法攻击对方!对方是和平模式"
+  SelfMode: "&b你的战斗模式为 &c%pvpcontrol_mode%"
+  TargetMode: "&b对方战斗模式为 &c%pvpcontrol_mode%"
+  ToggleMode: "&b成功设置自身PVP模式为 &c%pvpcontrol_mode%"
+  AdminSetPVPMode: "&b已成功为 %player% 设置模式为 &c%pvpcontrol_mode%"
+  AttackStates: "&c你已进入战斗模式! 无法通过满饱食度回复生命"

@@ -1,0 +1,11 @@
+name: PVPControl
+version: 1.0.0-SNAPSHOT
+main: com.github.hotpee.pvpcontrol.PVPControl
+
+commands:
+  pvpc:
+    aliases: [pvpcontrol]
+    description: Command help for AdsAutoMessage
+
+depend:
+  - PlaceholderAPI
