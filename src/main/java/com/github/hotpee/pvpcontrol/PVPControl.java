@@ -4,6 +4,7 @@ import com.github.hotpee.pvpcontrol.Command.CommandManager;
 import com.github.hotpee.pvpcontrol.Listeners.DamageListener;
 import com.github.hotpee.pvpcontrol.Listeners.JoinListener;
 import com.github.hotpee.pvpcontrol.Listeners.RegainListener;
+import com.github.hotpee.pvpcontrol.Metrics.Metrics;
 import com.github.hotpee.pvpcontrol.PlaceHolderAPIHook.PlaceHolderAPIHook;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +22,7 @@ public final class PVPControl extends JavaPlugin {
     public void onEnable() {
         ins = this;
         saveDefaultConfig();
+        new Metrics(this);
         if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             new PlaceHolderAPIHook(this).register();
             getLogger().info("[PVPControl]PlaceHolderAPI检测成功!插件正常启动");
