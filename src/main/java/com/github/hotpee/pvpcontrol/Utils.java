@@ -1,5 +1,6 @@
 package com.github.hotpee.pvpcontrol;
 
+import com.github.hotpee.pvpcontrol.API.PVPControlAPI;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -9,7 +10,11 @@ public class Utils {
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', s));
     }
     public static void MessageTitle(Player p, String t, String s){
-        p.sendTitle(ChatColor.translateAlternateColorCodes('&', t), ChatColor.translateAlternateColorCodes('&', s), 10, 30, 10);
+        if (PVPControl.getInstance().pvpControlAPI == null){
+            p.sendTitle(ChatColor.translateAlternateColorCodes('&', t), ChatColor.translateAlternateColorCodes('&', s), 10, 30, 10);
+        } else {
+            PVPControl.getInstance().pvpControlAPI.sendTitle(p, ChatColor.translateAlternateColorCodes('&', t), ChatColor.translateAlternateColorCodes('&', s), 10, 30, 10);
+        }
     }
 
     public static void Help(Player player){
@@ -20,10 +25,8 @@ public class Utils {
             Utils.Message(player, "&b● &7/pvpc help - &c查看插件所有命令");
             Utils.Message(player, "&b● &7/pvpc me - &c查看自身的战斗状态");
             Utils.Message(player, "&b● &7/pvpc toggle - &c切换你的战斗状态");
-            Utils.Message(player, "&b● &7/pvpc pvp on - &c开启自身战斗模式");
-            Utils.Message(player, "&b● &7/pvpc pvp off - &c开启自身和平模式");
-            Utils.Message(player, "&b● &7/pvpc pvp on <Player> - &c设置某玩家的战斗状态为战斗模式");
-            Utils.Message(player, "&b● &7/pvpc pvp off <Player> - &c设置某玩家的战斗状态为战斗模式");
+            Utils.Message(player, "&b● &7/pvpc pvp [on/off] - &c开启/关闭自身战斗模式");
+            Utils.Message(player, "&b● &7/pvpc pvp [on/off] <Player> - &c设置某玩家的战斗状态为战斗模式/和平模式");
             Utils.Message(player, "&b● &7/pvpc look <Player> - &c查看某玩家的战斗状态");
             Utils.Message(player, "&b● &7/pvpc reload - &c重载插件");
             Utils.Message(player, "&a");
@@ -35,8 +38,7 @@ public class Utils {
             Utils.Message(player, "&b● &7/pvpc help - &c查看插件所有命令");
             Utils.Message(player, "&b● &7/pvpc me - &c查看自身的PVP状态");
             Utils.Message(player, "&b● &7/pvpc toggle - &c切换你的PVP状态");
-            Utils.Message(player, "&b● &7/pvpc pvp on - &c开启自身PVP模式");
-            Utils.Message(player, "&b● &7/pvpc pvp off - &c开启自身和平模式");
+            Utils.Message(player, "&b● &7/pvpc pvp [on/off] - &c开启/关闭自身PVP模式");
             Utils.Message(player, "&a");
             Utils.Message(player, "&7&l--------------------------------");
         }

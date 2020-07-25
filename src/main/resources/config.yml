@@ -24,3 +24,7 @@ Language:
   ToggleMode: "&b成功设置自身PVP模式为 &c%pvpcontrol_mode%"
   AdminSetPVPMode: "&b已成功为 %player% 设置模式为 &c%pvpcontrol_mode%"
   AttackStates: "&c你已进入战斗模式! 无法通过满饱食度回复生命"
+  DantiaoStart: "&b单挑已开始，你的模式被切换成 &c对决模式"
+
+DisableWorld:
+  - PVPWORLD

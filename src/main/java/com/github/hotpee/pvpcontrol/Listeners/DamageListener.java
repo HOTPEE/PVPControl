@@ -18,6 +18,11 @@ public class DamageListener implements Listener {
         }
         if (e.getDamager() instanceof Player){
             if (e.getEntity() instanceof Player){
+                for (String s : PVPControl.disableWorld ) {
+                    if (e.getDamager().getWorld().getName().contains(s) && e.getEntity().getWorld().getName().contains(s)){
+                        return;
+                    }
+                }
                 Player Victim = (Player)e.getEntity();
                 Player Attacker = (Player)e.getDamager();
                 if (!(PVPControl.pvpmode.get(Attacker.getUniqueId()))){
@@ -36,6 +41,11 @@ public class DamageListener implements Listener {
         }
         if (e.getDamager() instanceof Projectile){
             if (e.getEntity() instanceof Player){
+                for (String s : PVPControl.disableWorld ) {
+                    if (e.getDamager().getWorld().getName().contains(s) && e.getEntity().getWorld().getName().contains(s)){
+                        return;
+                    }
+                }
                 Projectile projectile = (Projectile)e.getDamager();
                 if (projectile.getShooter() instanceof Player){
                     if (!(PVPControl.pvpmode.get(((Player) projectile.getShooter()).getUniqueId()))){

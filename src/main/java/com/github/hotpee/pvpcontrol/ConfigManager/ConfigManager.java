@@ -2,6 +2,8 @@ package com.github.hotpee.pvpcontrol.ConfigManager;
 
 import com.github.hotpee.pvpcontrol.PVPControl;
 
+import java.util.List;
+
 public class ConfigManager {
     // 前缀部分
     public static String getPrefix(){
@@ -47,4 +49,12 @@ public class ConfigManager {
     public static String getTargetMode(){
         return PVPControl.getInstance().getConfig().getString("Language.TargetMode").replaceAll("§","&");
     }
+    public static String getDantiaoStart(){
+        return PVPControl.getInstance().getConfig().getString("Language.DantiaoStart").replaceAll("§","&");
+    }
+
+    public static List<String> getWorld(){
+        return PVPControl.getInstance().getConfig().getStringList("DisableWorld");
+    }
+
 }
